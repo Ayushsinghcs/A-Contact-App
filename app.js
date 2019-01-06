@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const Nexmo = require('nexmo');
 const socketio = require('socket.io');
+const path = require('path');
 
 // Init Nexmo
 const nexmo = new Nexmo({
