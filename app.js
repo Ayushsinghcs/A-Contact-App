@@ -24,10 +24,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// // Index route
-// app.get('/', (req, res) => {
-//   res.render('index');
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/index.html'));
+});
 
 // Catch form submit
 app.post('/details.html', (req, res) => {
