@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <title>Node SMS Texting</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+<!-- <script>
+// var dataname = dataCookies.get('name'); //String of data
+// var dataphone = Cookies.getJSON('name');
+document.getElementById("number").value = "dataphone";
+// Cookies.get('phone_no'); //String of data
+// Cookies.getJSON('phone_no');
+ //Object literal of data
+</script> -->
+</head>
+<body>
+  <div class="container">
+    <h2>Send SMS Message</h2>
+    <input type="tel" name="number" id="number">
+    <input type="text" name="msg" id="msg" placeholder="Enter Text Message...">
+    <select name="schedule" id="schedule">
+      <option value="0">Schedule time to send a message</option>
+      <option value="1">After 1 minutes</option>
+      <option value="3">After 3 minutes</option>
+      <option value="5">After 5 minutes</option>
+    </select>
+    <input type="button" id="button" value="Send Text" class="button button-primary">
+    <p class="response"></p>
+    <button onclick="goBack()">Go Back</button>
+
+  </div>
+  <script>
+  // var dataname = dataCookies.get('name'); //String of data
+ var phone_no = Cookies.getJSON('phone_no');
+  document.getElementById("number").value = phone_no;
+  // document.getElementById("number").value = dataphone;
+
+  // Cookies.get('phone_no'); //String of data
+  // Cookies.getJSON('phone_no');
+   //Object literal of data
+  </script>
+  <script>
+  function goBack(){
+window.location.href = "http://localhost:3000/";
+  }
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/message.js"></script>
+  <!-- <script src="js/contactlist.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+</body>
+</html>
